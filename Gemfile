@@ -1,6 +1,11 @@
 source 'https://rubygems.org'
 gem 'rails', '3.2.7'
-gem 'sqlite3'
+group :development, :test do
+  gem 'sqlite3'
+end
+group :production do
+  gem 'pg'
+end
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
@@ -9,7 +14,7 @@ end
 gem 'jquery-rails'
 gem "thin", ">= 1.5.0"
 gem "factory_girl_rails", ">= 4.1.0", :group => [:development, :test]
-gem "twitter-bootstrap-rails", ">= 2.1.4", :group => :assets
+gem "twitter-bootstrap-rails", :group => :assets
 gem "therubyracer", ">= 0.10.2", :group => :assets, :platform => :ruby
 gem "omniauth"
 gem "omniauth-google-oauth2"
@@ -22,3 +27,5 @@ group :development do
   gem 'guard-livereload'
   gem 'yajl-ruby'
 end
+
+gem "heroku"
