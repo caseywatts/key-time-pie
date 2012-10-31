@@ -4,9 +4,9 @@
   <div class="form-inputs">
     <%= f.association :user, :as => :hidden, :input_html => {:value => current_user.id}%>
     <%= f.input :title %>
-    <%= f.input :scheduledclass, :label => "Class Hours", :hint => "number of hours class is scheduled per week" %>
-    <%= f.input :scheduledsection, :label => "Section Hours", :hint => "number of hours section is scheduled per week" %>
-    <%= f.input :unscheduled, :label => "Homework Hours", :hint => "or other unscheduled time" %>
+    <%= f.input :scheduledclass, :label => "Class Hours", :hint => "number of hours class is scheduled per week", :input_html => {:class => "span1"}%>
+    <%= f.input :scheduledsection, :label => "Section Hours", :hint => "number of hours section is scheduled per week", :input_html => {:class => "span1"}%>
+    <%= f.input :unscheduled, :label => "Homework Hours", :hint => "or other unscheduled time", :input_html => { :class => "span1"} %>
   </div>
 
   <div class="form-actions">

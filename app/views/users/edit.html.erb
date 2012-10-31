@@ -1,11 +1,11 @@
 <h1>Edit User: <%= @user.name %></h1>
 
-<%= simple_form_for(@user, :html => {:class => 'form-horizontal' }) do |f| %>
+<%= simple_form_for(@user, :html => {:class => 'form-inline' }) do |f| %>
   <%= f.input :email, :placeholder => 'user@domain.com' %>
+  <%= link_to_add_association 'Add Activity', f, :activities, :class => "btn btn-success", :data => {"association-insertion-method" => "append"} %>
   <%= f.simple_fields_for :activities do |task| %>
     <%= render 'activity_fields', :f => task %>
   <% end %>
-  <%= link_to_add_association 'Add Activity', f, :activities, class: "btn btn-success" %>
   <br />
   <%= f.button :submit %>
 <% end %>
