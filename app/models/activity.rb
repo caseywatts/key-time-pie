@@ -1,4 +1,4 @@
 class Activity < ActiveRecord::Base
   belongs_to :user
-  attr_accessible :scheduledclass, :scheduledsection, :title, :unscheduled, :user_id
+  attr_accessible :title, :scheduledclass, :scheduledsection, :unscheduled, :user_id
 end
