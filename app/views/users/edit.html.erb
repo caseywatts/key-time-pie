@@ -2,9 +2,9 @@
 
 <%= simple_form_for(@user, :html => {:class => 'form-inline' }) do |f| %>
   <%= f.input :email, :placeholder => 'user@domain.com' %>
-  <%= link_to_add_association 'Add Activity', f, :activities, :class => "btn btn-success", :data => {"association-insertion-method" => "append"} %>
-  <%= f.simple_fields_for :activities do |task| %>
-    <%= render 'activity_fields', :f => task %>
+  <%= link_to_add_association 'Add Activity', f, :activities, :class => "btn btn-success", :data => {"association-insertion-method" => "after"} %>
+  <%= f.simple_fields_for :activities do |activity| %>
+    <%= render 'activity_fields', :f => activity %>
   <% end %>
   <br />
   <%= f.button :submit %>
