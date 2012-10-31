@@ -1,6 +1,7 @@
-<%= form_for(@user) do |f| %>
-  <%= f.label :email %>
-  <%= f.text_field :email %>
+<h1>Edit User: <%= @user.name %></h1>
+
+<%= simple_form_for(@user, :html => {:class => 'form-horizontal' }) do |f| %>
+  <%= f.input :email, :placeholder => 'user@domain.com' %>
   <br />
-  <%= f.submit "Sign in" %>
+  <%= f.button :submit %>
 <% end %>
