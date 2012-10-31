@@ -1,0 +1,31 @@
+<h1>Listing activities</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>User</th>
+    <th>Scheduledclass</th>
+    <th>Scheduledsection</th>
+    <th>Unscheduled</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @activities.each do |activity| %>
+  <tr>
+    <td><%= activity.title %></td>
+    <td><%= activity.user.name %></td>
+    <td><%= activity.scheduledclass %></td>
+    <td><%= activity.scheduledsection %></td>
+    <td><%= activity.unscheduled %></td>
+    <td><%= link_to 'Show', activity %></td>
+    <td><%= link_to 'Edit', edit_activity_path(activity) %></td>
+    <td><%= link_to 'Destroy', activity, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Activity', new_activity_path %>

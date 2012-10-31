@@ -1,0 +1,15 @@
+<%= simple_form_for(@activity, :html => {:class => 'form-horizontal'}) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.association :user %>
+    <%= f.input :title %>
+    <%= f.input :scheduledclass, :label => "Class Hours", :hint => "number of hours class is scheduled per week" %>
+    <%= f.input :scheduledsection, :label => "Section Hours", :hint => "number of hours section is scheduled per week" %>
+    <%= f.input :unscheduled, :label => "Homework Hours", :hint => "or other unscheduled time" %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
