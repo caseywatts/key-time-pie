@@ -1,5 +1,4 @@
 <div class="nested-fields">
-  <fieldset>
   <%= f.input :activity, :wrapper => :append do %>
     <%= f.association :user, :as => :hidden, :input_html => {:value => current_user.id}%>
     <%= f.input_field :title %>
@@ -8,5 +7,4 @@
     <%= f.input :unscheduled, :label => "Homework Hours", :hint => "or other unscheduled time" %>
     <%= link_to_remove_association "Remove Activity", f, :class => "btn btn-inverse" %>
   <% end %>
-  </fieldset>
 </div>
