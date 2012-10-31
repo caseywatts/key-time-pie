@@ -31,7 +31,7 @@ GEM
     addressable (2.3.2)
     arel (3.0.2)
     builder (3.0.4)
-    coderay (1.0.7)
+    coderay (1.0.8)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
       railties (~> 3.2.0)
@@ -82,13 +82,13 @@ GEM
       actionpack (>= 3.1)
       less (~> 2.2.0)
     libv8 (3.3.10.4)
-    listen (0.5.0)
+    listen (0.5.3)
     lumberjack (1.0.2)
     mail (2.4.4)
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
-    method_source (0.8)
+    method_source (0.8.1)
     mime-types (1.19)
     multi_json (1.3.6)
     multipart-post (1.1.5)
@@ -185,7 +185,7 @@ DEPENDENCIES
   guard-livereload
   hub (>= 1.10.2)
   jquery-rails
-  omniauth (>= 1.1.1)
+  omniauth
   omniauth-google-oauth2
   quiet_assets (>= 1.0.1)
   rails (= 3.2.7)

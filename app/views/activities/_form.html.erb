@@ -2,7 +2,7 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.association :user %>
+    <%= f.association :user, :as => :hidden, :input_html => {:value => current_user.id}%>
     <%= f.input :title %>
     <%= f.input :scheduledclass, :label => "Class Hours", :hint => "number of hours class is scheduled per week" %>
     <%= f.input :scheduledsection, :label => "Section Hours", :hint => "number of hours section is scheduled per week" %>
