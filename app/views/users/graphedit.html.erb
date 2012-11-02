@@ -1,8 +1,11 @@
-<%= form_for(@user, :html => {:class => 'form-inline' }) do |f| %>
+<h1>Edit User: <%= @user.name %></h1>
+
+<%= simple_form_for(@user, :html => {:class => 'form-inline' }) do |f| %>
   <div class="contentfields">
+  <%= f.input :email, :placeholder => 'user@domain.com' %>
   <%= link_to_add_association 'Add Activity', f, :activities, :class => "btn btn-success", :data => {"association-insertion-method" => "append"} %>
   <br />
-  <%= f.fields_for :activities do |activity| %>
+  <%= f.simple_fields_for :activities do |activity| %>
     <%= render 'activity_fields', :f => activity %>
   <% end %>
 </div>
