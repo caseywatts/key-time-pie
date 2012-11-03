@@ -1,0 +1,15 @@
+<ul class="activity_groups">
+  <%= activity_groups.each do |group| %>
+    <li>
+      <%=link_to "Activity Group #{group.id}", activity_group_path(group.id) %>
+      <ul class="activities">
+
+        <%= group.activities.each do |activity| %>
+          <li><%= activity.title %>
+          </li>
+        <% end %>
+
+      </ul>
+    </li>
+  <% end %>
+</ul>

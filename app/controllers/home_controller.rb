@@ -1,5 +1,7 @@
 class HomeController < ApplicationController
   def index
-    @users = User.all
+    if current_user
+      @activity_groups = current_user.activity_groups
+    end
   end
 end

@@ -1,12 +1,1 @@
-<%= form_for(@user, :html => {:class => 'form-inline' }) do |f| %>
-  <div class="contentfields">
-  <%= link_to_add_association 'Add Activity', f, :activities, :class => "btn btn-success", :data => {"association-insertion-method" => "append"} %>
-  <br />
-  <%= f.fields_for :activities do |activity| %>
-    <%= render 'activity_fields', :f => activity %>
-  <% end %>
-</div>
-  <div class="actions">
-    <%= f.button :submit %>
-  </div>
-<% end %>
+<%#<%= form_for(@user, :html => {:class => 'form-inline' }) do |f| %>%>

@@ -1,8 +1,7 @@
 <div class="nested-fields well" style="display:inline-block;">
-    <%= f.hidden_field :user_id, :value => current_user.id%>
-    <%= f.text_field :title, :class => "span2 titlefield", :style => "height:40px;"%>
+    <%= f.text_field :title, :class => "span2 titlefield"%>
     <%= f.text_field :scheduledclass, :label => "Class Hours", :class => "span1"%>
     <%= f.text_field :scheduledsection, :label => "Section Hours", :class => "span1"%>
     <%= f.text_field :unscheduled, :label => "Homework Hours", :class => "span1" %>
-    <%= link_to_remove_association "Remove Activity", f, :class => "btn btn-inverse" %>
+    <%= link_to_remove_association "X", f, :class => "btn btn-inverse" %>
 </div>

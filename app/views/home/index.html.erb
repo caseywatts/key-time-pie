@@ -1,4 +1,21 @@
 <h3>Key Time Pie</h3>
-<% @users.each do |user| %>
-  <p>User: <%=link_to user.name, user %></p>
+<% if current_user %>
+<ul class="activity_groups">
+  <% @activity_groups.each do |group| %>
+    <li>
+      <%=link_to "Activity Group #{group.id}", activity_group_path(group.id) %>
+      <ul class="activities">
+
+        <% group.activities.each do |activity| %>
+          <li><%= activity.title %>
+          </li>
+        <% end %>
+
+      </ul>
+    </li>
+  <% end %>
+</ul>
+<%= link_to "New Activity Group", new_activity_group_path, :class => "btn btn-success" %>
+<% else %>
+  Please Sign In
 <% end %>
