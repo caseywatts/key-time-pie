@@ -8,6 +8,7 @@ class ActivityGroupsController < ApplicationController
 
   def new
     @activity_group = ActivityGroup.new
+    gon.activity_group = @activity_group.activities
   end
 
   def create
