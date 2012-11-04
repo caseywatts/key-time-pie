@@ -1,12 +1,69 @@
-<%= form_for(@activity_group, :html => {:class => 'form-inline' }) do |f| %>
-  <div class="contentfields">
-  <%= link_to_add_association 'Add Activity', f, :activities, :class => "btn btn-success", :data => {"association-insertion-method" => "append"} %>
-  <br />
-  <%= f.fields_for :activities do |activity| %>
-    <%= render 'activity_fields', :f => activity %>
-  <% end %>
-</div>
-  <div class="actions">
-    <%= f.button :submit, :class => 'btn btn-info' %>
+<div class="row">
+  <div class="span10">
+    <%= form_for(@activity_group, :html => {:class => 'form-inline' }) do |f| %>
+      <div class="contentfields">
+        <%= link_to_add_association 'Add Activity', f, :activities, :class => "btn btn-success", :data => {"association-insertion-method" => "append"} %>
+        <br />
+        <%= f.fields_for :activities do |activity| %>
+          <%= render 'activity_fields', :f => activity %>
+        <% end %>
+      </div>
+      <div class="actions">
+        <%= f.button :submit, :class => 'btn btn-info' %>
+      </div>
+    <% end %>
   </div>
-<% end %>
+  <div class="span2">
+    <div id="highcharts-container">
+      <script>
+        activity_group_json = gon.activity_group;
+        output = [];
+        for (var i = 0; i < activity_group_json.length; i++) {
+          output[i] = {}
+          output[i].name = activity_group_json[i].title;
+          totaltime = parseFloat(activity_group_json[i].scheduledclass) + parseFloat(activity_group_json[i].scheduledsection) + parseFloat(activity_group_json[i].unscheduled)
+          if (isNaN(totaltime))
+          {
+            totaltime = 0
+          };
+          output[i].y = totaltime
+        }
+        $(document).ready(function(){
+          $(function(){
+            var chart;
+            chart = new Highcharts.Chart({
+              chart: {
+                renderTo: 'highcharts-container',
+                plotBackgroundColor: null,
+                plotBorderWidth: null,
+                plotShadow: false
+              },
+              title: {
+                text: ''
+              },
+              tooltip: {
+                pointFormat: '{series.name}: <b>{point.percentage}%</b>',
+                percentageDecimals: 1
+              },
+              plotOptions: {
+                pie: {
+                  allowPointSelect: true,
+                  cursor: 'pointer',
+                  dataLabels: {
+                    enabled: false
+                  },
+                  showInLegend: true
+                }
+              },
+              series: [{
+                type: 'pie',
+                name: 'time spent',
+                data: output
+              }]
+            });
+          });
+        });
+      </script>
+    </div>
+  </div>
+</div>

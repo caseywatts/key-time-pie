@@ -15,3 +15,5 @@
 //= require twitter/bootstrap
 //= require_tree .
 //= require cocoon
+//= require highcharts
+//= require highcharts/modules/exporting

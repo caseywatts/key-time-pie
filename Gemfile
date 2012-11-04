@@ -30,3 +30,5 @@ end
 
 gem "heroku"
 gem "cocoon"
+gem "highcharts-rails"
+gem "gon"

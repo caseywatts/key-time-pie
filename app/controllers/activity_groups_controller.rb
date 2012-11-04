@@ -23,6 +23,7 @@ class ActivityGroupsController < ApplicationController
 
   def edit
     @activity_group = ActivityGroup.find(params[:id])
+    gon.activity_group = @activity_group.activities
   end
   
   def update
