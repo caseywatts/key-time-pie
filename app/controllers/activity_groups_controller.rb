@@ -11,7 +11,7 @@ class ActivityGroupsController < ApplicationController
   end
 
   def create
-    @activity_group = ActivityGroup.create(params[:activity_group])
+    @activity_group = ActivityGroup.new()
     @activity_group.user = current_user
     if @activity_group.update_attributes(params[:activity_group])
       redirect_to '/'
